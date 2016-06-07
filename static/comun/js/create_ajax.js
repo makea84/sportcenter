@@ -13,7 +13,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	$(document).on("click","[class*=boton_crear_]",function(){
+	$(document).on("click","[class*=boton_crear_]",function(event){
 	    var form = $(this).parent().parent();
 		console.log(form);
 		event.preventDefault();
@@ -84,8 +84,6 @@ $(document).ready(function() {
 		var formulario = formularios.find('[class*=div_formulario_crear_]');
 		var formulario_crear=formulario.find('form');
 		dataform=get_data(formulario_crear);
-		event.stopPropagation(); 
-	    event.preventDefault();
 		$.ajax({
 			url : form.attr('action'),
 			data: dataform,

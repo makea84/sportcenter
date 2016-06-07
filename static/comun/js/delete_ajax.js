@@ -19,7 +19,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	$(document).on("click","[class*=boton-borrar-]",function(){
+	$(document).on("click","[class*=boton-borrar-]",function(event){
 		var form = $(this).parent();
 		event.preventDefault();
 		event.stopPropagation();
@@ -37,8 +37,6 @@ $(document).ready(function() {
 		$('#my-modal').modal('show');
 		timeout_init();
 		$('#my-modal').modal('hide');
-	    event.stopPropagation(); 
-	    event.preventDefault(); 
 		var clave = key;
 		var borrar = form.find('input:hidden[name=borrar]').val();
 		$.ajax({

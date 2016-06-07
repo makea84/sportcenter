@@ -19,7 +19,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	$(document).on("click","[class*=boton-consultar-]",function(){
+	$(document).on("click","[class*=boton-consultar-]",function(event){
 		var form = $(this).parent();
 		event.preventDefault();
 		event.stopPropagation();
@@ -34,8 +34,6 @@ $(document).ready(function() {
 		$('#my-modal').modal('show');
 		timeout_init();
 		$('#my-modal').modal('hide');
-	    event.stopPropagation(); 
-	    event.preventDefault(); 
 		var clave = key;
 		var consultar = form.find('input:hidden[name=consultar]').val();
 		$.ajax({

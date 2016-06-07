@@ -20,7 +20,7 @@ $(document).ready(function() {
 		setTimeout(procesando, 3000);
 	}
 
-	$(document).on("click","[class*=boton_adicionar_]",function(){
+	$(document).on("click","[class*=boton_adicionar_]",function(event){
 		var form = $(this).parent().parent();
 		console.log(form);
 		event.preventDefault();
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		form.submit();
 	});
 	
-	$(document).on("click","[class*=boton_quitar_]",function(){
+	$(document).on("click","[class*=boton_quitar_]",function(event){
 		var form = $(this).parent().parent();
 		console.log(form);
 		event.preventDefault();

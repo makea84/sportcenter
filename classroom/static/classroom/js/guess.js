@@ -10,7 +10,7 @@ $(document).ready(function() {
 	
 	function load_classroom(){
 		console.log('Prueba');
-		prueba=$(".resultado").load('/sportcenter/clases/otros/');
+		prueba=$(".resultado").load("{% url 'otros' %}");
 		console.log(prueba);
 	}
 	

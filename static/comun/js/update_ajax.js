@@ -28,7 +28,7 @@ $(document).ready(function() {
 		setTimeout(procesando, 3000);
 	}
 
-	$(document).on("click","[class*=boton-modificar-]",function(){
+	$(document).on("click","[class*=boton-modificar-]",function(event){
 		var form = $(this).parent();
 		console.log(form);
 		event.preventDefault();
@@ -36,7 +36,7 @@ $(document).ready(function() {
 		form.submit();
 	});
 
-	$(document).on("click","[class*=boton_modificar_]",function(){
+	$(document).on("click","[class*=boton_modificar_]",function(event){
 	    var form = $(this).parent().parent();
 		console.log(form);
 		event.preventDefault();
@@ -81,9 +81,7 @@ $(document).ready(function() {
 		formulario.removeClass('hide');
 		var formulario_modificar=formulario.find('form');
 		console.log(formulario_modificar)
-		console.log(formulario)
-		event.stopPropagation(); 
-	    event.preventDefault(); 
+		console.log(formulario) 
 		var clave = key;
 		var cargar = form.find('input:hidden[name=cargar]').val();
 		console.log(key);
@@ -119,8 +117,6 @@ $(document).ready(function() {
 	
 	function edit_element(form){
 		console.log('edit')
-		event.stopPropagation();
-	    event.preventDefault();
 	    var key = form.find('input:hidden[name=element]').val();
 		dataform=get_data(form);
 		var enlace = form.find('#id_enlace').val();

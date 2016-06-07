@@ -45,7 +45,7 @@ $(document).ready(function() {
 		setTimeout(procesando, 3000);
 	}
 
-	$(document).on("click","[class*=boton-apuntar-]",function(){
+	$(document).on("click","[class*=boton-apuntar-]",function(event){
 		var form = $(this).parent();
 		console.log(form);
 		event.preventDefault();
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		form.submit();
 	});
 	
-	$(document).on("click","[class*=boton-desapuntar-]",function(){
+	$(document).on("click","[class*=boton-desapuntar-]",function(event){
 		var form = $(this).parent();
 		console.log(form);
 		event.preventDefault();
@@ -93,8 +93,6 @@ $(document).ready(function() {
 		timeout_init();
 		$('#my-modal').modal('hide');
 		var formularios = tab.find('.select_formulario');
-		event.stopPropagation(); 
-	    event.preventDefault(); 
 		var clave = key;
 		var apuntar = form.find('input:hidden[name=apuntar]').val();
 		console.log(key);
@@ -162,8 +160,6 @@ $(document).ready(function() {
 		timeout_init();
 		$('#my-modal').modal('hide');
 		var formularios = tab.find('.select_formulario');
-		event.stopPropagation(); 
-	    event.preventDefault(); 
 		var clave = key;
 		var desapuntar = form.find('input:hidden[name=desapuntar]').val();
 		console.log(key);

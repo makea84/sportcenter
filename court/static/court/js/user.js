@@ -20,7 +20,7 @@ $(document).ready(function() {
 		setTimeout(procesando, 3000);
 	}
 
-	$(document).on("click","[class*=boton_reservar_reserva]",function(){
+	$(document).on("click","[class*=boton_reservar_reserva]",function(event){
 		var form = $(this).parent().parent();
 		console.log(form);
 		event.preventDefault();

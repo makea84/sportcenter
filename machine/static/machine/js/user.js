@@ -20,7 +20,7 @@ $(document).ready(function() {
 		setTimeout(procesando, 3000);
 	}
 
-	$(document).on("click","[class*=boton-descargar-]",function(){
+	$(document).on("click","[class*=boton-descargar-]",function(event){
 		var form = $(this).parent();
 		console.log(form);
 		event.preventDefault();
