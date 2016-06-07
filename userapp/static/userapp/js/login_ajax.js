@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 	
 	$(".boton-crear-usuario").each(function(index) {
-	    $(this).on("click", function(){
+	    $(this).on("click", function(event){
 	    	var form = $(this).parent();
 			console.log(form);
 			event.preventDefault();
@@ -57,8 +57,6 @@ $(document).ready(function() {
 	}
 	
 	function create_element(form) {
-		event.stopPropagation();
-	    event.preventDefault();
 		dataform=get_data(form);
 		$('.info').empty();
 		$('.image_ajax').removeClass('hide');
@@ -118,8 +116,6 @@ $(document).ready(function() {
 	};
 	
 	function login(form) {
-		event.stopPropagation();
-	    event.preventDefault();
 		var dataform =get_data(form);
 		$('.info').empty();
 		$('.image_ajax').removeClass('hide');
