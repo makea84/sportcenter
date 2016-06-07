@@ -15,14 +15,14 @@
             <li class=""><a href="{% url 'home' %}">Home</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="clases" href="{% url 'classroom:todas_clases' %}">Clases</a></li>
-            <li><a id="pistas" href="{% url 'court:todas_pistas' %}">Pistas</a></li>
-            <li><a id="maquinas" href="{% url 'machine:todas_maquinas' %}">Maquinas</a></li>
-            <li><a id="productos" href="{% url 'product:todas_productos' %}">Productos</a></li>
+            <li><a id="clases" href="{% url 'todas_clases' %}">Clases</a></li>
+            <li><a id="pistas" href="{% url 'todas_pistas' %}">Pistas</a></li>
+            <li><a id="maquinas" href="{% url 'todas_maquinas' %}">Maquinas</a></li>
+            <li><a id="productos" href="{% url 'todas_productos' %}">Productos</a></li>
             {% if user_unregistered %}
  
             {% else %}
-            <li><a id="productos" href="{% url 'userapp:salir' %}">Salir</a></li>
+            <li><a id="productos" href="{% url 'salir' %}">Salir</a></li>
           	{% endif %}
           </ul>
         </div><!--/.nav-collapse -->
