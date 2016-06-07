@@ -133,9 +133,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'makea84$sportcenter',
         'HOST':'makea84.mysql.pythonanywhere-services.com',
-         'PASSWORD':'yomismo84',
-         'USER':'makea84',
-         'PORT':3306,
+        'PASSWORD':'yomismo84',
+        'USER':'makea84',
+        'PORT':3306,
      }
  }
 
