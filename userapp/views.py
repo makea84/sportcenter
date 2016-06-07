@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, redirect
 from django.template.context_processors import csrf
+from django.core.urlresolvers import reverse
 from django.http import JsonResponse
 
 from userapp.forms import UserAppForm, UserForm
@@ -71,7 +72,7 @@ def index(request):
                     if acceso.is_active:
                         login(request, acceso)
                         logger.debug('redirect ok')
-                        response_data={'url':'/sportcenter/home/'}
+                        response_data={'url':reverse('home')}
                         return JsonResponse(response_data)
                     else:
                         logger.debug('no activo')
