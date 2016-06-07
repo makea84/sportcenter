@@ -26,7 +26,7 @@ $(document).ready(function() {
 	});
 	
 	$(".boton-crear-login").each(function(index) {
-	    $(this).on("click", function(){
+	    $(this).on("click", function(event){
 	    	var form = $(this).parent();
 			console.log(form);
 			event.preventDefault();
