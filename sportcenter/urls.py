@@ -6,11 +6,11 @@ from django.conf.urls.static import static
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^sportcenter/',include('userapp.urls'), namespace='userapp'),
-    url(r'^sportcenter/pistas/',include('court.urls'), namespace='court'),
-    url(r'^sportcenter/productos/',include('product.urls'), namespace='product'),
-    url(r'^sportcenter/maquinas/',include('machine.urls'), namespace='machine'),
-    url(r'^sportcenter/clases/',include('classroom.urls'), namespace='classroom'),
+    url(r'^sportcenter/',include('userapp.urls')),
+    url(r'^sportcenter/pistas/',include('court.urls')),
+    url(r'^sportcenter/productos/',include('product.urls')),
+    url(r'^sportcenter/maquinas/',include('machine.urls')),
+    url(r'^sportcenter/clases/',include('classroom.urls')),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^media/(?P<path>.*)$',{'document_root': settings.MEDIA_ROOT}),
     #url(r'^static/(?P<path>.*)$', {'document_root': settings.STATIC_ROOT})
