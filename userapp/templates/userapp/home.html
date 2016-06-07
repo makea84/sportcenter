@@ -13,7 +13,7 @@
           	<h2 class="tag-title h2 texto_h2">Clases</h2>
             <hr />
             <p class="fuente_Lato p_text texto_h3">En SportCenter ofrecemos diferentes clases para que nuestros clientes satisfagan sus necesidades de conocimiento. Ya sea karate, kick boxing, judo, o cualquier tipo de arte marcial aquí podrás informarte.</p>
-            <a href="/sportcenter/clases/todas_clases/" class="btn btn-block btn-primary">Ver Clases</a>
+            <a href="{% url 'classroom:todas_clases'%}" class="btn btn-block btn-primary">Ver Clases</a>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                {% include "comun/carrousel.html" with data=clase %}
@@ -24,7 +24,7 @@
             	<h2 class="tag-title h2 texto_h2">Tienda</h2>
                 <hr />
                 <p class="fuente_Lato p_text texto_h3">Si lo que necesitas es equipamiento, en nuestra tienda encontraras aquello que buscas, desde suplementos alimenticios hasta vestimenta. No esperes más y consigue eso que te falta.</p>
-                <a href="/sportcenter/productos/todos_productos/" class="btn btn-block btn-primary">Ver Tienda</a>
+                <a href="{% url 'product:todos_productos'%}" class="btn btn-block btn-primary">Ver Tienda</a>
              </div>
              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     {% include "comun/carrousel.html" with data=producto %}
@@ -35,7 +35,7 @@
             	<h2 class="tag-title h2 texto_h2">Pistas</h2>
                 <hr />
                 <p class="fuente_Lato p_text texto_h3">Además del gimnasio tenemos a tu diposición diferentes pistas donde practicar tu deporte favorito, padel, fútbol, baloncesto...</p>
-                <a href="/sportcenter/pistas/todas_pistas/" class="btn btn-block btn-primary">Ver Pistas</a>
+                <a href="{% url 'court:todas_pistas'%}" class="btn btn-block btn-primary">Ver Pistas</a>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               		{% include "comun/carrousel.html" with data=pista %}
@@ -46,7 +46,7 @@
                 	<h2 class="tag-title h2 texto_h2">Gimnasio</h2>
                     <hr />
                     <p class="fuente_Lato p_text texto_h3">Si lo que necesitas es equipamiento, en nuestra tienda encontraras aquello que buscas, desde suplementos alimenticios hasta vestimenta. No esperes más y consigue eso que te falta.</p>
-                    <a href="/sportcenter/maquinas/todas_maquinas/" class="btn btn-block btn-primary">Ver Gimnasio</a>
+                    <a href="{% url 'machine:todas_maquinas'%}" class="btn btn-block btn-primary">Ver Gimnasio</a>
                  </div>
                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                      	{% include "comun/carrousel.html" with data=maquina %}
