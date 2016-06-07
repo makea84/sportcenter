@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from . import views
- 
+appname='machine' 
 urlpatterns = [
     url(r'^todas_maquinas/$', views.allMachines, name='todas_maquinas'),
     url(r'^maquina/$', views.get_machine, name='maquina'),

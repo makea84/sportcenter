@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from . import views
-
+appname='classroom'
 urlpatterns = [
     url(r'^todas_clases/$', views.allClassrooms, name='todas_clases'),
     url(r'^clase/$', views.get_classroom, name='clase'),

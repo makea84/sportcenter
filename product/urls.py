@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from . import views
-
+appname='product'
 urlpatterns = [
     url(r'^todos_productos/$', views.allProducts, name='todos_productos'),
     url(r'^producto/$', views.get_product, name='producto'),

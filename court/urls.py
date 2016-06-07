@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from . import views
-
+appname='court'
 urlpatterns = [
     url(r'^todas_pistas/$', views.allCourts, name='todas_pistas'),
     url(r'^pista/$', views.get_court, name='pistas'),
