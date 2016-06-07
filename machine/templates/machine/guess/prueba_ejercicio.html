@@ -1,0 +1,35 @@
+{% for result in ejercicio %}
+<div class="row bloque">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">	
+          <p><img class="img-responsive img-thumbnail" src="/media/{{result.image}}" alt=""></p>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <p class="texto_h3 fuente_Monserrat">Nombre: {{result.name}}</p>
+          <p class="texto_h3 fuente_Monserrat">Maquina: {{result.machine.name}}</p>
+          <p class="texto_h3 fuente_Monserrat">Zona: {{result.zone}}</p>
+     </div>
+     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        	<div class="row">
+           		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            <form class="form-horizontal form-consultar-ejercicio" role="form" enctype="multipart/form-data" action="/sportcenter/maquinas/todas_maquinas/" method="POST">
+       		{% csrf_token %}
+            	<input type="hidden" name="pk" value="{{result.pk}}">
+            	<input type="hidden" id="id_tipe" name="tipe" value="exercise">
+            	<input type="hidden" id="id_consultar" name="consultar" value="consultar">
+            	<input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/maquinas/ejercicio/">
+            	<button type="submit" class="boton-consultar-ejercicio btn btn-primary btn-block">Consultar</button>
+            </form>
+            </div>
+            </div>
+     </div>
+ </div>
+{% empty %}
+	<div class="row sin">
+    	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+          <h2>No hay elementos</h2>
+    	</div>
+    </div>
+{% endfor %}
+{% if ejercicio %}
+{% include 'comun/pagination.html' with data=ejercicio %}
+{% endif %}

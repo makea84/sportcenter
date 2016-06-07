@@ -1,0 +1,19 @@
+<div class="container arriba_espacio">
+    <div id="tabs">
+  		<ul>
+    		<li class="activo_li"><a id="1" href="#tabs-1">Pistas</a></li>
+  		</ul>
+  		<div id="tabs-1">
+        	<hr/>
+        	<div class="row">
+   				<div id="pistas" class="resultado_tab">
+   					<div class="cargar" id="cargar_pistas">
+   						{% include "court/guess/prueba_pista.html" %}
+   					</div>
+   				</div>
+			</div>
+        </div>
+	</div>
+{% include "comun/modal.html" %}
+{% include "court/modal.html" %}
+</div>

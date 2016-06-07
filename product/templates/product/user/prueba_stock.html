@@ -1,0 +1,30 @@
+{% for result in stock %}
+  <div class="row bloque">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+          <p class="texto_h3 fuente_Monserrat">Nombre: {{result.product.name}}</p>
+          <p class="texto_h3 fuente_Monserrat">Cantidad: {{result.quantity}}</p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        	<div class="row">
+           		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            	<form class="form-horizontal form-consultar-stock" role="form" enctype="multipart/form-data" action="/sportcenter/productos/todos_productos/" method="POST">
+       			{% csrf_token %}
+            		<input type="hidden" name="pk" value="{{result.pk}}">
+            		<input type="hidden" id="id_tipe" name="tipe" value="stock">
+            		<input type="hidden" id="id_consultar" name="consultar" value="consultar">
+            		<button type="submit" class="boton-consultar-stock btn btn-primary btn-block">Consultar</button>
+            	</form>
+            </div>
+            </div>
+        </div>
+ 	</div>
+ {% empty %}
+	<div class="row sin">
+    	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+          <h2>No hay elementos</h2>
+    	</div>
+    </div>
+{% endfor %}
+{% if stock %}
+{% include 'comun/pagination.html' with data=stock %}
+{% endif %}

@@ -1,0 +1,63 @@
+{% include "comun/resource.html" %}
+{% include "userapp/resource.html" %}
+{% load staticfiles %}
+
+<body class="full">
+{% include "comun/nav_si_log.html" %}
+
+ <div class="container">
+	<div class="row">
+		<h1 class="text-center h1 texto_h1 separar">Servicios</h1>
+        <div class="row espacio_abajo separar seccion">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          	<h2 class="tag-title h2 texto_h2">Clases</h2>
+            <hr />
+            <p class="fuente_Lato p_text texto_h3">En SportCenter ofrecemos diferentes clases para que nuestros clientes satisfagan sus necesidades de conocimiento. Ya sea karate, kick boxing, judo, o cualquier tipo de arte marcial aquí podrás informarte.</p>
+            <a href="/sportcenter/clases/todas_clases/" class="btn btn-block btn-primary">Ver Clases</a>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+               {% include "comun/carrousel.html" with data=clase %}
+          </div>    
+        </div>
+        <div class="row espacio_abajo separar seccion">
+        	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            	<h2 class="tag-title h2 texto_h2">Tienda</h2>
+                <hr />
+                <p class="fuente_Lato p_text texto_h3">Si lo que necesitas es equipamiento, en nuestra tienda encontraras aquello que buscas, desde suplementos alimenticios hasta vestimenta. No esperes más y consigue eso que te falta.</p>
+                <a href="/sportcenter/productos/todos_productos/" class="btn btn-block btn-primary">Ver Tienda</a>
+             </div>
+             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    {% include "comun/carrousel.html" with data=producto %}
+             </div>    
+          </div>
+          <div class="row espacio_abajo separar seccion">
+          	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            	<h2 class="tag-title h2 texto_h2">Pistas</h2>
+                <hr />
+                <p class="fuente_Lato p_text texto_h3">Además del gimnasio tenemos a tu diposición diferentes pistas donde practicar tu deporte favorito, padel, fútbol, baloncesto...</p>
+                <a href="/sportcenter/pistas/todas_pistas/" class="btn btn-block btn-primary">Ver Pistas</a>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              		{% include "comun/carrousel.html" with data=pista %}
+               </div>    
+            </div>
+         	<div class="row espacio_abajo separar seccion">
+            	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                	<h2 class="tag-title h2 texto_h2">Gimnasio</h2>
+                    <hr />
+                    <p class="fuente_Lato p_text texto_h3">Si lo que necesitas es equipamiento, en nuestra tienda encontraras aquello que buscas, desde suplementos alimenticios hasta vestimenta. No esperes más y consigue eso que te falta.</p>
+                    <a href="/sportcenter/maquinas/todas_maquinas/" class="btn btn-block btn-primary">Ver Gimnasio</a>
+                 </div>
+                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                     	{% include "comun/carrousel.html" with data=maquina %}
+                 </div> 
+            </div>   
+     </div>
+</div>
+
+{% include "comun/footer.html" %}
+      
+</body>
+
+
+</html>

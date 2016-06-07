@@ -1,0 +1,37 @@
+class BillTest(TestCase):
+
+    def test_valid_form(self):
+        image = InMemoryUploadedFile(
+            StringIO(TEST_IMAGE),
+            field_name='image',
+            name='1.JPG',
+            content_type='image/jpg',
+            size=len(TEST_IMAGE),
+            charset='utf-8',
+        )
+        data ={'name':'nombre','description':'descripcion','price':'100.00','image':image.name}
+        producto = Product.objects.create(**data)
+        print producto
+        data ={'price':'100.00','quantity':'10','subtotal':'1000.00','product':producto}
+        linea = Line.objects.create(**data)
+        print linea
+        data = {'total':'100.00','date':'10/10/2018','line':linea}
+        form = BillForm(data=data)
+        self.assertTrue(form.is_valid())
+
+    def test_invalid_form(self):
+        image = InMemoryUploadedFile(
+            StringIO(TEST_IMAGE),
+            field_name='image',
+            name='1.JPG',
+            content_type='image/jpg',
+            size=len(TEST_IMAGE),
+            charset='utf-8',
+        )
+        data ={'name':'nombre','description':'descripcion','price':'100.00','image':image.name}
+        producto = Product.objects.create(**data)
+        data ={'price':'100.00','quantity':'10','subtotal':'1000.00','product':producto}
+        linea = Line.objects.create(**data)
+        data = {'total':'','date':'10/10/2018','line':linea}
+        form = BillForm(data=data)
+        self.assertFalse(form.is_valid())

@@ -1,0 +1,50 @@
+{% for result in lugar %}
+  <div class="row bloque">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+          <p class="texto_h3 fuente_Monserrat">Clase: {{result.classroom.name}}</p>
+          <p class="texto_h3 fuente_Monserrat">Curso: {{result.course.name}}</p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        	<div class="row">
+           		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            	<form class="form-horizontal form-modificar-lugar" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST">
+       			{% csrf_token %}
+       				<input type="hidden" name="pk" value="{{result.pk}}">
+       				<input type="hidden" id="id_tipe" name="tipe" value="place">
+       				<input type="hidden" id="id_cargar" name="cargar" value="cargar">
+       				<input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/clases/lugar/">
+            		<button type="submit" class="boton-modificar-lugar btn btn-primary btn-block">Modificar</button>
+            	</form>
+            </div>
+             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            	<form class="form-horizontal form-borrar-lugar" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST">
+       			{% csrf_token %}
+            		<input type="hidden" name="pk" value="{{result.pk}}">
+            		<input type="hidden" id="id_tipe" name="tipe" value="place">
+            		<input type="hidden" id="id_borrar" name="borrar" value="borrar">
+            		<input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/clases/lugar/">
+            		<button type="submit" class="boton-borrar-lugar btn btn-primary btn-block">Borrar</button>
+            	</form>
+            </div>
+             <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            	<form class="form-horizontal form-consultar-lugar" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST">
+       			{% csrf_token %}
+            		<input type="hidden" name="pk" value="{{result.pk}}">
+            		<input type="hidden" id="id_tipe" name="tipe" value="place">
+            		<input type="hidden" id="id_consultar" name="consultar" value="consultar">
+            		<button type="submit" class="boton-consultar-lugar btn btn-primary btn-block">Consultar</button>
+            	</form>
+            </div>
+           </div>
+        </div>
+ 	</div>
+{% empty %}
+	<div class="row sin">
+    	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+          <h2>No hay elementos</h2>
+    	</div>
+    </div>
+{% endfor %}
+{% if lugar %}
+{% include 'comun/pagination.html' with data=lugar %}
+{% endif %}

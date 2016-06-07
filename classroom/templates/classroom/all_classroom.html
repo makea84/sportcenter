@@ -1,0 +1,26 @@
+{% load staticfiles %}
+{% include "comun/resource.html" %}
+{% include "classroom/resource.html" %}
+<body class="full">
+
+{% include "comun/nav_si_log.html" %}
+
+{% if admin %}
+	{% include "classroom/admin/admin_classroom.html" %}
+{% endif %}
+
+{% if user_registered %}
+    {% include "classroom/user/user_classroom.html" %}
+{% endif %}
+
+{% if user_unregistered %}
+    {% include "classroom/guess/guess_classroom.html" %}
+{% endif %}
+
+
+{% include "comun/footer.html" %}
+     
+</body>
+{% include "comun/fondo.html" %}
+
+</html>

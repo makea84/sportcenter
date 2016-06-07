@@ -1,0 +1,33 @@
+<div id="form_ejercicio" class="row select_formulario">
+    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 div_formulario_crear_ejercicio">
+        <form class="form-horizontal formulario-crear-ejercicio" role="form" enctype="multipart/form-data" action="/sportcenter/maquinas/todas_maquinas/" method="POST" id="crear-ejercicio-form">
+       	{% csrf_token %}
+        	{% include "comun/form_template.html" with form=form_exercises %}
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            	<button type="submit" class="btn btn-primary boton_crear_ejercicio">Enviar</button>
+            	<button type="reset" class="btn btn-primary boton_limpiar_ejercicio">Limpiar</button>
+            </div>
+            <input type="hidden" id="id_tipe" name="tipe" value="exercise">
+            <input type="hidden" id="id_crear" name="crear" value="crear">
+            <input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/maquinas/ejercicio/">
+		</form>
+		<hr/>	
+     </div>
+     <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 hide div_formulario_modificar_ejercicio">
+        <form class="form-horizontal formulario-modificar-datos-ejercicio" role="form" enctype="multipart/form-data" action="/sportcenter/maquinas/todas_maquinas/" method="POST" id="modificar-ejercicio-form">
+       	{% csrf_token %}
+        	{% include "comun/form_template.html" with form=form_exercises %}
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            	<button type="submit" class="btn btn-primary boton_modificar_ejercicio">Enviar</button>
+            	<button type="reset" class="btn btn-primary boton_limpiar_ejercicio">Limpiar</button>
+            </div>
+            <input type="hidden" id="id_tipe" name="tipe" value="exercise">
+            <input type="hidden" id="id_modificar" name="modificar" value="modificar">
+            <input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/maquinas/ejercicio/">
+		</form>
+		<hr/>	
+     </div>
+     <div class="info col-lg-6 col-md-12 col-sm-12 col-xs-12 col-lg-offset-1">
+           
+    </div>
+</div>

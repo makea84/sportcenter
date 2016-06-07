@@ -1,0 +1,56 @@
+<div class="container arriba_espacio">
+    <div id="tabs">
+  		<ul>
+    		<li class="activo_li"><a id="1" href="#tabs-1">Productos</a></li>
+    		<li class="activo_li"><a id="2" href="#tabs-2">Stocks</a></li>
+    		<li class="activo_li"><a id="3" href="#tabs-3">Lineas</a></li>
+    		<li class="activo_li"><a id="4" href="#tabs-4">Facturas</a></li>
+  		</ul>
+  		<div id="tabs-1">
+        	{% include "product/admin/product.html" %}
+        	<hr/>
+        	<div class="row">
+   				<div id="productos" class="resultado_tab">
+   					<div class="cargar" id="cargar_productos">
+   						{% include "product/admin/prueba_producto.html" %}
+   					</div>
+   				</div>
+			</div>
+        </div>
+        <div id="tabs-2">
+			{% include "product/admin/stock.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="stocks" class="resultado_tab">
+   					<div class="cargar" id="cargar_stocks">
+   						{% include "product/admin/prueba_stock.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+		<div id="tabs-3">
+			{% include "product/admin/line.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="lineas" class="resultado_tab">
+   					<div class="cargar" id="cargar_lineas">
+   						{% include "product/admin/prueba_linea.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+		<div id="tabs-4">
+			{% include "product/admin/bill.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="facturas" class="resultado_tab">
+   					<div class="cargar" id="cargar_facturas">
+   						{% include "product/admin/prueba_factura.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+	</div>
+{% include "comun/modal.html" %}
+{% include "product/modal.html" %}
+</div>

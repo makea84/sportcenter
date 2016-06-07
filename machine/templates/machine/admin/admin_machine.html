@@ -1,0 +1,56 @@
+<div class="container arriba_espacio">
+    <div id="tabs">
+  		<ul>
+    		<li class="activo_li"><a id="1" href="#tabs-1">Maquinas</a></li>
+    		<li class="activo_li"><a id="2" href="#tabs-2">Ejercicios</a></li>
+    		<li class="activo_li"><a id="3" href="#tabs-3">Programas</a></li>
+    		<li class="activo_li"><a id="4" href="#tabs-4">Planificaciones</a></li>
+  		</ul>
+  		<div id="tabs-1">
+        	{% include "machine/admin/machine.html" %}
+        	<hr/>
+        	<div class="row">
+   				<div id="maquinas" class="resultado_tab">
+   					<div class="cargar" id="cargar_maquinas">
+   						{% include "machine/admin/prueba_maquina.html" %}
+   					</div>
+   				</div>
+			</div>
+        </div>
+        <div id="tabs-2">
+			{% include "machine/admin/exercise.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="ejercicios" class="resultado_tab">
+   					<div class="cargar" id="cargar_ejercicios">
+   						{% include "machine/admin/prueba_ejercicio.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+		<div id="tabs-3">
+			{% include "machine/admin/programm.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="programas" class="resultado_tab">
+   					<div class="cargar" id="cargar_programas">
+   						{% include "machine/admin/prueba_programa.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+		<div id="tabs-4">
+			{% include "machine/admin/planification.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="planificaciones" class="resultado_tab">
+   					<div class="cargar" id="cargar_planificaciones">
+   						{% include "machine/admin/prueba_planificacion.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+	</div>
+{% include "comun/modal.html" %}
+{% include "machine/modal.html" %}
+</div>

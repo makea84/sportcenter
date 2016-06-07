@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+    	
+        <title>Programa</title>
+        <style type="text/css">
+            @page {
+                size: {{ pagesize }};
+                margin: 1cm;
+                @frame footer {
+                    -pdf-frame-content: footerContent;
+                    bottom: 0cm;
+                    margin-left: 9cm;
+                    margin-right: 9cm;
+                    height: 1cm;
+                }
+            }
+            .seccion{border:2px solid black;}
+            .grande{color:#024959;text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey; font-size:2.5em;}
+            .mediano{color:#024959;text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey; font-size:2.0em;}
+            .medio{color:#024959;text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey; font-size:1.5em;}
+            .cabecera{border-bottom:2px solid black;}
+            .programa{padding:10px;border:solid 1px black; display:block;}
+        </style>
+	</head>
+    <body>
+    	 <div class="row cabecera">
+    	 	{% for planification in planifications %}
+    	 	<span class="grande">Planificacion para el {{planification.day}} - {{ planification.name }}</span>
+    	 	{% endfor %}
+		</div>
+        <div class="row informe">
+        {% for planification, data in planifications %}
+        {% for programm in programms %}
+        <p class="medio">Ejercicio:{{ programm.exercise.name }}</p>
+        	<div class="col-lg-12 seccion">
+        		<div class="programa">
+        			<div><b>Se usa para fortificar: </b> {{ programm.exercise.zone }}.</div>
+    				<div><b>Series: </b>{{ programm.series }}.</div>
+					<div><b>Repeticion por serie: </b>{{ programm.quantity }}.</div>
+    				<div><b>Descanso entre series: </b>{{ programm.rest }} segundos.</div>
+      				<div><b>Maquina: </b>{{ programm.exercise.machine.name }}	</div>
+        		</div>
+        	</div>
+    	{% endfor %}
+    	{% endfor %}
+    	</div>	   
+        <div id="footerContent">
+            {%block page_foot%}
+                Pagina <pdf:pagenumber>
+            {%endblock%}
+        </div>
+    </body>
+</html>

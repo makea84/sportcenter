@@ -1,0 +1,8 @@
+{% load tags %}
+{{ form.non_field_errors }}
+{% for field in form %}
+<div class="form-group">
+   <label for="{{ field.id_for_label }}" class="label_color"> {{ field.label }}</label> 
+        {{ field|addcss:"form-control" }}
+</div>
+{% endfor %}

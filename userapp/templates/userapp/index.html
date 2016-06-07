@@ -1,0 +1,53 @@
+{% include "comun/resource_2.html" %}
+{% load widget_tweaks %}
+<body class="full">
+<div class="container"> 
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h1 class="h1 texto_h1 fuente_Lato text-center">Bienvenido a SportCenter.</h1>
+			<h2 class="h2 texto_h2 fuente_Monserrat text-center">El recinto deportivo con todo lo que necesitas</h2>
+			<p class="h3 texto_h3 fuente_Monserrat text-center">desde maquinaria de musculación hasta pistas para practicar tu deporte favorito.</p>				
+			<p class="h3 texto_h3 fuente_Monserrat text-center" >Date de alta hoy mismo y descubre todo lo que ofrecemos.</p>
+			<hr/>
+			<div class="row espacio_abajo">
+				<p class="h3 texto_h3 fuente_Monserrat text-center">Tambien puedes echar un vistazo como invitado, para ello pulsa sobre el enlace, entrar como invitado.</p>
+				<p class="h3 texto_h3 fuente_Monserrat text-center"><a class="invitado" id="invitado" href="/sportcenter/home/">Entrar como invitado</a></p>
+			</div>
+		</div>
+		<br/>
+    </div>
+    <hr/>
+    <div class="row">
+  		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 abajo">
+        	<form class="formulario-crear-usuario" role="form" enctype="multipart/form-data" action="/sportcenter/" method="POST" id="crear-usuario-form">
+       		{% csrf_token %}
+        	{% include "comun/form_template_line.html" with form=formU %}
+        	{% include "comun/form_template_line.html" with form=formUC %}
+            	<button type="submit" class="btn btn-primary boton-crear-usuario">Enviar</button>
+            	<input type="hidden" id="id_tipe" name="tipe" value="user">
+            	<input type="hidden" id="id_crear" name="crear" value="crear">
+			</form>	
+     	</div>
+     	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 abajo">
+        	<form class="formulario-crear-login" role="form" enctype="multipart/form-data" action="/sportcenter/" method="POST" id="crear-login-form">
+       		{% csrf_token %}
+        	{% include "comun/form_template_line.html" with form=formA %}
+            	<button type="submit" class="btn btn-primary boton-crear-login">Enviar</button>
+            	<input type="hidden" id="id_tipe" name="tipe" value="user">
+            	<input type="hidden" id="id_login" name="crear" value="login">
+			</form>	
+     	</div>
+     </div>
+     <hr/>
+</div>
+</body>
+
+{% include "userapp/resource.html" %}
+
+{% include "comun/fondo.html" %}
+
+{% include "comun/modal.html" %}
+
+{% include "userapp/modal.html" %}
+
+</html>

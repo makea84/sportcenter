@@ -1,0 +1,32 @@
+<div class="container arriba_espacio">
+    <div id="tabs">
+  		<ul>
+    		<li class="activo_li"><a id="1" href="#tabs-1">Productos</a></li>
+    		<li class="activo_li"><a id="2" href="#tabs-2">Stocks</a></li>
+  		</ul>
+  		<div id="tabs-1">
+        
+        	<hr/>
+        	<div class="row">
+   				<div id="productos" class="resultado_tab">
+   					<div class="cargar" id="cargar_productos">
+   						{% include "product/user/prueba_producto.html" %}
+   					</div>
+   				</div>
+			</div>
+        </div>
+        <div id="tabs-2">
+		
+			<hr/>
+			<div class="row">
+   				<div id="stocks" class="resultado_tab">
+   					<div class="cargar" id="cargar_stocks">
+   						{% include "product/user/prueba_stock.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+	</div>
+{% include "comun/modal.html" %}
+{% include "product/modal.html" %}
+</div>

@@ -1,0 +1,14 @@
+{% extends "plantillas/base_no_login.html" %}
+
+{% block contenido %}
+	<div class="loginPrincipal">
+		<h2>Login</h2>
+		<form class="form-inline" action="" method="post">
+    		{% csrf_token %}
+    	   		{% include "plantillas/form_base.html" with form=form %}
+    	   	<br/>
+    		<p><input class="botonPrincipal" type="submit" value="Login"></p>
+		</form>
+	</div>
+{% endblock %}
+

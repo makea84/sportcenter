@@ -1,0 +1,6 @@
+{% load staticfiles %}
+<ul class="bxslider">
+{% for result in data %}
+  <li><img class="elemento_img img-responsive img-thumbnail" src="/media/{{result.image}}" alt=""></li>
+{% endfor %}
+</ul>

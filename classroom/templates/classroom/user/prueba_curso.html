@@ -1,0 +1,46 @@
+{% for result in no_curso %}
+  <div class="row bloque">
+        <div class="col-lg-8 col-md-12col-sm-12 col-xs-12">
+          <p class="texto_h3 fuente_Monserrat">Nombre: {{result.name}}</p>
+          <p class="texto_h3 fuente_Monserrat">Descripcion: {{result.description}}</p>
+          <p class="texto_h3 fuente_Monserrat">Dia: {{result.day}}</p>
+          <p class="texto_h3 fuente_Monserrat">Hora: {{result.hour}}</p>
+          <p class="texto_h3 fuente_Monserrat">Duracion: {{result.duration}}</p>
+          <p class="texto_h3 fuente_Monserrat">Coste: {{result.cost}}</p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        	<div class="row">
+           		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            	<form class="form-horizontal form-consultar-curso" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST">
+       			{% csrf_token %}
+            		<input type="hidden" name="pk" value="{{result.pk}}">
+            		<input type="hidden" id="id_tipe" name="tipe" value="course">
+            		<input type="hidden" id="id_consultar" name="consultar" value="consultar">
+            		<button type="submit" class="boton-consultar-curso btn btn-primary btn-block">Consultar</button>
+            	</form>
+            </div>
+            </div>
+            <div class="row">
+           		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
+            	<form class="form-horizontal form-apuntar-curso" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST">
+       			{% csrf_token %}
+            		<input type="hidden" name="pk" value="{{result.pk}}">
+            		<input type="hidden" id="id_tipe" name="tipe" value="course">
+            		<input type="hidden" id="id_apuntar" name="apuntar" value="apuntar">
+            		<button type="submit" class="boton-apuntar-curso btn btn-primary btn-block">Apuntar</button>
+            	</form>
+            </div>
+            </div>
+        </div>
+ 	</div>
+{% empty %}
+	<div class="row sin">
+    	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+          <h2>No hay elementos</h2>
+    	</div>
+    </div>
+    
+{% endfor %}
+{% if no_curso %}
+{% include 'comun/pagination.html' with data=no_curso %}
+{% endif %}

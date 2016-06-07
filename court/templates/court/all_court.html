@@ -1,0 +1,34 @@
+{% load staticfiles %}
+{% include "comun/resource.html" %}
+{% if admin %}
+{% include "court/resource.html" %}
+{% endif %}
+{% if user_registered %}
+{% include "court/resource_user.html" %}
+{% endif %}
+{% if user_unregistered %}
+{% include "court/resource_user.html" %}
+{% endif %}
+<body class="full">
+
+{% include "comun/nav_si_log.html" %}
+
+{% if admin %}
+	{% include "court/admin/admin_court.html" %} 
+{% endif %}
+
+{% if user_registered %}
+    {% include "court/user/user_court.html" %}
+{% endif %}
+
+{% if user_unregistered %}
+    {% include "court/guess/guess_court.html" %}
+{% endif %}
+
+
+{% include "comun/footer.html" %}
+     
+</body>
+{% include "comun/fondo.html" %}
+
+</html>

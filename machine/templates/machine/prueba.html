@@ -1,0 +1,10 @@
+{% for exercise, machines in exercises %}
+    <h2>{{ exercise.label }}</h2>
+    <p>{{ exercise.name }},{{ exercise.zone }}</p>
+    <p>{{ exercise.machine }}</p>
+    <ul>
+    {% for machine in machines %}
+      <li>{{ machine.name }}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}

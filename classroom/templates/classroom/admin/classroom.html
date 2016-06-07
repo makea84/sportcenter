@@ -1,0 +1,38 @@
+<div class="row">
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <h1 class="page-header texto_h1 fuente_Lato">Clases</h1>
+   </div>
+</div>
+<div class="row select_formulario">
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 div_formulario_crear_clase">
+        <form class="form-horizontal formulario-crear-clase" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST" id="crear-clase-form">
+       	{% csrf_token %}
+        	{% include "comun/form_template.html" with form=form_classrooms %}
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            	<button type="submit" class="btn btn-primary boton_crear_clase">Enviar</button>
+            	<button type="reset" class="btn btn-primary boton_limpiar_clase">Limpiar</button>
+            </div>
+            <input type="hidden" id="id_tipe" name="tipe" value="classroom">
+            <input type="hidden" id="id_crear" name="crear" value="crear">
+            <input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/clases/clase/">
+		</form>
+		<hr/>	
+     </div>
+     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 hide div_formulario_modificar_clase">
+        <form class="form-horizontal formulario-modificar-datos-clase" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST" id="modificar-clase-form">
+       	{% csrf_token %}
+        	{% include "comun/form_template.html" with form=form_classrooms %}
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            	<button type="submit" class="btn btn-primary boton_modificar_clase">Enviar</button>
+            	<button type="reset" class="btn btn-primary boton_limpiar_clase">Limpiar</button>
+            </div>
+            <input type="hidden" id="id_tipe" name="tipe" value="classroom">
+            <input type="hidden" id="id_modificar" name="modificar" value="modificar">
+            <input type="hidden" id="id_enlace" name="enlace" value="/sportcenter/clases/clase/">
+		</form>
+		<hr/>	
+     </div>
+     <div class="info col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-1">
+           
+    </div>
+</div>

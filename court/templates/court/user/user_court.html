@@ -1,0 +1,32 @@
+<div class="container arriba_espacio">
+    <div id="tabs">
+  		<ul>
+    		<li class="activo_li"><a id="1" href="#tabs-1">Pistas</a></li>
+    		<li class="activo_li"><a id="2" href="#tabs-2">Reservas</a></li>
+  		</ul>
+  		<div id="tabs-1">
+
+        	<hr/>
+        	<div class="row">
+   				<div id="pistas" class="resultado_tab">
+   					<div class="cargar" id="cargar_pistas">
+   						{% include "court/user/prueba_pista.html" %}
+   					</div>
+   				</div>
+			</div>
+        </div>
+        <div id="tabs-2">
+	
+			<hr/>
+			<div class="row">
+   				<div id="reservas" class="resultado_tab">
+   					<div class="cargar" id="cargar_reservas">
+   						{% include "court/user/prueba_reserva.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+	</div>
+{% include "comun/modal.html" %}
+{% include "court/modal.html" %}
+</div>

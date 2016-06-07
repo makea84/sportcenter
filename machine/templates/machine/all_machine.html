@@ -1,0 +1,34 @@
+{% load staticfiles %}
+{% include "comun/resource.html" %}
+{% if admin %}
+	{% include "machine/resource.html" %}
+{% endif %}
+{% if user_registered %}
+	{% include "machine/resource_user.html" %}
+{% endif %}
+{% if user_unregistered %}
+    {% include "machine/resource_user.html" %}
+{% endif %}
+<body class="full">
+
+{% include "comun/nav_si_log.html" %}
+
+{% if admin %}
+	{% include "machine/admin/admin_machine.html" %}
+{% endif %}
+
+{% if user_registered %}
+    {% include "machine/user/user_machine.html" %}
+{% endif %}
+
+{% if user_unregistered %}
+    {% include "machine/guess/guess_machine.html" %}
+{% endif %}
+
+
+{% include "comun/footer.html" %}
+     
+</body>
+{% include "comun/fondo.html" %}
+
+</html>

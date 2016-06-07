@@ -1,0 +1,56 @@
+<div class="container arriba_espacio">
+    <div id="tabs">
+  		<ul>
+    		<li class="activo_li"><a id="1" href="#tabs-1">Clases</a></li>
+    		<li class="activo_li"><a id="2" href="#tabs-2">Cursos</a></li>
+    		<li class="activo_li"><a id="3" href="#tabs-3">Participaciones</a></li>
+    		<li class="activo_li"><a id="4" href="#tabs-4">Lugares</a></li>
+  		</ul>
+  		<div id="tabs-1">
+        	{% include "classroom/admin/classroom.html" %}
+        	<hr/>
+        	<div class="row">
+   				<div id="clases" class="resultado_tab">
+   					<div class="cargar" id="cargar_clases">
+   						{% include "classroom/admin/prueba_clase.html" %}
+   					</div>
+   				</div>
+			</div>
+        </div>
+        <div id="tabs-2">
+			{% include "classroom/admin/course.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="cursos" class="resultado_tab">
+   					<div class="cargar" id="cargar_cursos">
+   						{% include "classroom/admin/prueba_curso.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+		<div id="tabs-3">
+			{% include "classroom/admin/participation.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="participaciones" class="resultado_tab">
+   					<div class="cargar" id="cargar_participaciones">
+   						{% include "classroom/admin/prueba_participacion.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+		<div id="tabs-4">
+			{% include "classroom/admin/place.html" %}
+			<hr/>
+			<div class="row">
+   				<div id="lugares" class="resultado_tab">
+   					<div class="cargar" id="cargar_lugares">
+   						{% include "classroom/admin/prueba_lugar.html" %}
+   					</div>
+   				</div>
+			</div>
+		</div>
+	</div>
+{% include "comun/modal.html" %}
+{% include "classroom/modal.html" %}
+</div>
