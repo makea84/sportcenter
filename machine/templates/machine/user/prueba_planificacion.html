@@ -8,7 +8,7 @@
 		<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
         	<div class="row">
            		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
-            <form class="form-horizontal form-consultar-planificacion" role="form" enctype="multipart/form-data" action="/sportcenter/maquinas/todas_maquinas/" method="POST">
+            <form class="form-horizontal form-consultar-planificacion" role="form" enctype="multipart/form-data" action="{% url 'todas_maquinas' %}" method="POST">
        		{% csrf_token %}
             	<input type="hidden" name="pk" value="{{result.pk}}">
             	<input type="hidden" id="id_tipe" name="tipe" value="planification">
@@ -20,7 +20,7 @@
            </div>
            <div class="row">
            		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
-            	<form class="form-horizontal form-descargar-planificacion" role="form" enctype="multipart/form-data" action="/sportcenter/maquinas/todas_maquinas/" method="POST">
+            	<form class="form-horizontal form-descargar-planificacion" role="form" enctype="multipart/form-data" action="{% url 'todas_maquinas' %}" method="POST">
        			{% csrf_token %}
             		<input type="hidden" name="pk" value="{{result.pk}}">
             		<input type="hidden" id="id_tipe" name="tipe" value="planification">

@@ -5,7 +5,7 @@
 </div>
 <div id="form_reserva" class="row select_formulario">
     <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 div_formulario_crear_reserva">
-        <form class="form-horizontal formulario-crear-reserva" role="form" enctype="multipart/form-data" action="{% url 'court:todas_pistas' %}" method="POST" id="crear-reserva-form">
+        <form class="form-horizontal formulario-crear-reserva" role="form" enctype="multipart/form-data" action="{% url 'todas_pistas' %}" method="POST" id="crear-reserva-form">
        	{% csrf_token %}
         	{% include "comun/form_template.html" with form=form_reservations %}
         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -19,7 +19,7 @@
 		<hr/>	
      </div>
      <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 hide div_formulario_modificar_reserva">
-        <form class="form-horizontal formulario-modificar-datos-reserva" role="form" enctype="multipart/form-data" action="{% url 'court:todas_pistas' %}" method="POST" id="modificar-reserva-form">
+        <form class="form-horizontal formulario-modificar-datos-reserva" role="form" enctype="multipart/form-data" action="{% url 'todas_pistas' %}" method="POST" id="modificar-reserva-form">
        	{% csrf_token %}
         	{% include "comun/form_template.html" with form=form_reservations %}
         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">

@@ -14,7 +14,7 @@
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
         	<div class="row">
            		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
-            	<form class="form-horizontal form-modificar-pista" role="form" enctype="multipart/form-data" action="{% url 'court:todas_pistas' %}" method="POST">
+            	<form class="form-horizontal form-modificar-pista" role="form" enctype="multipart/form-data" action="{% url 'todas_pistas' %}" method="POST">
        			{% csrf_token %}
        				<input type="hidden" name="pk" value="{{result.pk}}">
        				<input type="hidden" id="id_tipe" name="tipe" value="court">
@@ -24,7 +24,7 @@
             	</form>
             </div>
            	<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
-            	<form class="form-horizontal form-borrar-pista" role="form" enctype="multipart/form-data" action="{% url 'court:todas_pistas' %}" method="POST">
+            	<form class="form-horizontal form-borrar-pista" role="form" enctype="multipart/form-data" action="{% url 'todas_pistas' %}" method="POST">
        			{% csrf_token %}
             		<input type="hidden" name="pk" value="{{result.pk}}">
             		<input type="hidden" id="id_tipe" name="tipe" value="court">
@@ -34,7 +34,7 @@
             	</form>
             </div>
            		<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 abajo">
-            	<form class="form-horizontal form-consultar-pista" role="form" enctype="multipart/form-data" action="{% url 'court:todas_pistas' %}" method="POST">
+            	<form class="form-horizontal form-consultar-pista" role="form" enctype="multipart/form-data" action="{% url 'todas_pistas' %}" method="POST">
        			{% csrf_token %}
             		<input type="hidden" name="pk" value="{{result.pk}}">
             		<input type="hidden" id="id_tipe" name="tipe" value="court">
