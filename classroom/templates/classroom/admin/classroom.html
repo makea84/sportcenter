@@ -5,7 +5,7 @@
 </div>
 <div class="row select_formulario">
     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 div_formulario_crear_clase">
-        <form class="form-horizontal formulario-crear-clase" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST" id="crear-clase-form">
+        <form class="form-horizontal formulario-crear-clase" role="form" enctype="multipart/form-data" action="{% url 'classroom:todas_clases' %}" method="POST" id="crear-clase-form">
        	{% csrf_token %}
         	{% include "comun/form_template.html" with form=form_classrooms %}
         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -19,7 +19,7 @@
 		<hr/>	
      </div>
      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 hide div_formulario_modificar_clase">
-        <form class="form-horizontal formulario-modificar-datos-clase" role="form" enctype="multipart/form-data" action="/sportcenter/clases/todas_clases/" method="POST" id="modificar-clase-form">
+        <form class="form-horizontal formulario-modificar-datos-clase" role="form" enctype="multipart/form-data" action="{% url 'classroom:todas_clases' %}" method="POST" id="modificar-clase-form">
        	{% csrf_token %}
         	{% include "comun/form_template.html" with form=form_classrooms %}
         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">

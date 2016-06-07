@@ -19,7 +19,7 @@
     <hr/>
     <div class="row">
   		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 abajo">
-        	<form class="formulario-crear-usuario" role="form" enctype="multipart/form-data" action="/sportcenter/" method="POST" id="crear-usuario-form">
+        	<form class="formulario-crear-usuario" role="form" enctype="multipart/form-data" action="{% url 'userapp:index' %}" method="POST" id="crear-usuario-form">
        		{% csrf_token %}
         	{% include "comun/form_template_line.html" with form=formU %}
         	{% include "comun/form_template_line.html" with form=formUC %}
@@ -29,7 +29,7 @@
 			</form>	
      	</div>
      	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 abajo">
-        	<form class="formulario-crear-login" role="form" enctype="multipart/form-data" action="/sportcenter/" method="POST" id="crear-login-form">
+        	<form class="formulario-crear-login" role="form" enctype="multipart/form-data" action="{% url 'userapp:index' %}" method="POST" id="crear-login-form">
        		{% csrf_token %}
         	{% include "comun/form_template_line.html" with form=formA %}
             	<button type="submit" class="btn btn-primary boton-crear-login">Enviar</button>

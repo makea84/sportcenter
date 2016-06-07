@@ -23,7 +23,7 @@ SECRET_KEY = 'jyp6cg-202vct4buphwy)m54f#z9nuz6g!p=rzim0q447_i2@h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['makea84.pythonanywhere.com']
 
 
 # Application definition
@@ -115,6 +115,8 @@ STATICFILES_DIRS = (
    STATIC_PATH, 
 )
 
+STATIC_ROOT = RUTA_PROYECTO.child('staticos')
+
 #MEDIA_ROOT = RUTA_PROYECTO.child('media')
 
 MEDIA_ROOT = MEDIA_PATH
@@ -129,13 +131,13 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'sportcenter',
-        'HOST':'',
-        'PASSWORD':'root',
-        'USER':'root',
-        'PORT':3306,
-    }
-}
+        'NAME':'makea84.mysql.pythonanywhere-services.com',
+        'HOST':'makea84.pythonanywhere.com',
+         'PASSWORD':'yomismo84',
+         'USER':'makea84',
+         'PORT':3306,
+     }
+ }
 
 import sys
 
